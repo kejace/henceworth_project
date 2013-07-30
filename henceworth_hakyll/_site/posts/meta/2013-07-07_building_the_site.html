@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>My build-setup — henceworth</title>
+        <link rel="stylesheet" type="text/css" href="../../css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/master.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/syntax.css" />
+        <link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css" />
+    </head>
+    <body>
+        
+        <header class="site-header">
+            <h1><a href="../../index.html">
+                /ˌhensˈwɜː(r)θ/</a>
+            </h1>
+            <nav class="site-nav">
+                <a href="../../index.html"><i class="icon-home"></i> Home</a>
+                <a href="../../mission.html"><i class="icon-lightbulb"></i> Mission</a>
+                <a href="../../archive.html"><i class="icon-folder-open-alt"></i> Archive</a>
+            </nav>
+        </header>
+ 
+        <section class="content">
+        (default.html)
+        ------
+        <article itemscope itemtype="http://schema.org/Article">
+    <header class="posthead">
+        <h1 itemprop="name">My build-setup</h1>
+        <div class="meta"><i class="icon-user"></i> by <span itemprop="creator">Kristoffer Josefsson</span>
+            <i class="icon-tags"></i> <span itemprop="keywords"></span></div>
+        <time itemprop="dateCreated" datetime="2013-07-07"><span class="m">Jul</span> <span class="d">07</span> <span class="y">2013</span></time>
+    </header>
+
+
+
+  <div id="#wrapper">
+
+<div id="left1">
+<div class="inner">
+
+(post_horizontal.html)
+ <section class="tags">
+ 	hello tags
+        
+        </section>
+
+<h3>My build-setup</h3>
+
+ <p>First create a Heroku account <a href="http://www.heroku.com">here</a>. I would say, get a <a href="http://www.github.com">GitHub</a> account as well. </p>
+<p>Get the toolchains for <a href="https://toolbelt.heroku.com">Heroku</a> and <a href="http://mac.github.com">GitHub</a> too.</p>
+<p>Clone <a href="https://github.com/puffnfresh/haskell-buildpack-demo">this</a> repo</p>
+<pre><code>git clone https://github.com/pufuwozu/haskell-buildpack-demo.git</code></pre>
+<p>Then create a Heroku app</p>
+<pre><code>heroku create --stack=cedar --buildpack https://github.com/pufuwozu/heroku-buildpack-haskell.git</code></pre>
+<p>I went in and changed the name of the app (appname), thereafter you need to also rename your git-info</p>
+<pre><code>heroku git:remote -a appname
+git remote add heroku git@heroku.com:appname.git </code></pre>
+<p>You also want to make sure you add your public key</p>
+<pre><code>heroku keys:add</code></pre>
+<p>You can now push it</p>
+<pre><code>git push heroku master</code></pre>
+<p>Try out making changes by</p>
+<pre><code>cd src
+vi Main.hs</code></pre>
+<p>Then commit your changes</p>
+<pre><code>git commit -a</code></pre>
+<p>and push them to see your website update</p>
+<pre><code>git push heroku master</code></pre>
+
+</div>
+</div>
+
+
+<div id="left2">
+<div class="inner">
+<h3>Notes</h3>
+
+<p>There’s an issue with time-out when including Hakyll in the Cabal dependency so this is kind of pointless at the moment.</p>
+
+</div>
+</div>
+
+
+</div> <!-- #wrapper -->
+
+</article>
+ 
+        </section>
+
+
+        <footer class="site-footer">
+            <p>
+                London/Boston - 
+                <a href="mailto:hello@henceworth.org">
+                hello@henceoworth.org</a> -
+                <a href="http://twitter.com/henceworth">
+                @henceworth</a> -
+                <a href="http://henceworth.org/atom.xml">Feed <i class="icon-rss"></i></a>
+            </p>
+            <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">
+                <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png"></a>
+            <br>
+            Unless specified otherwise, this work is licensed under
+            a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+            </p>
+        </footer>
+    </body>
+</html>
