@@ -1,4 +1,4 @@
-julien.jhome.fr
-===============
+henceworth.org
+==============
 
-My personal website and blog
+Hakyll static generator
